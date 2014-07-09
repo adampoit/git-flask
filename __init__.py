@@ -3,7 +3,7 @@ import git
 
 app = Flask(__name__)
 
-repos = { "adampoit/git-flask": "/home/adampoit/webapps/git/git" }
+repos = { "adampoit/git-flask": "/home/adampoit/webapps/git_flask/git_flask" }
 
 @app.route("/", methods=["POST"])
 def gitpull():
