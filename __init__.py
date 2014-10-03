@@ -16,7 +16,7 @@ def gitpull():
 	
 def touch(fname, times=None):
 	with open(fname, 'a'):
-        os.utime(fname, times)
+		os.utime(fname, times)
 
 if __name__ == "__main__":
 	app.run()
