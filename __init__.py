@@ -4,7 +4,7 @@ import os
 
 app = Flask(__name__)
 
-repos = { "git-flask": "/home/adampoit/webapps/git_flask/git_flask" }
+repos = { "git-flask": "/home/adampoit/webapps/git_flask/git_flask", "botd": "/home/adampoit/webapps/botd/botd" }
 
 @app.route("/", methods=["POST"])
 def gitpull():
@@ -16,7 +16,7 @@ def gitpull():
 	
 def touch(fname, times=None):
 	with open(fname, 'a'):
-        	os.utime(fname, times)
+        os.utime(fname, times)
 
 if __name__ == "__main__":
 	app.run()
