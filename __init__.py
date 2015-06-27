@@ -4,7 +4,7 @@ import subprocess
 
 app = Flask(__name__)
 
-repos = { "git-flask": "/home/adampoit/webapps/git_flask/git_flask", "botd": "/home/adampoit/webapps/botd/botd" }
+repos = { "git-flask": "/home/adampoit/webapps/git_flask/git_flask" }
 
 @app.route("/", methods=["POST"])
 def gitpull():
