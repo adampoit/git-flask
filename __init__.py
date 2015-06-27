@@ -1,6 +1,6 @@
 from flask import Flask, request
 import git
-import os
+import subprocess
 
 app = Flask(__name__)
 
@@ -11,12 +11,8 @@ def gitpull():
 	path = repos[request.get_json()["repository"]["name"]]
 	repo = git.Repo(path)
 	repo.git.pull()
-	touch(os.path.dirname(path) + "/wsgi.py")
+	subprocess.call(os.path.dirname(path) + "/deploy.sh")
 	return "", 204
-	
-def touch(fname, times=None):
-	with open(fname, 'a'):
-		os.utime(fname, times)
 
 if __name__ == "__main__":
 	app.run()
